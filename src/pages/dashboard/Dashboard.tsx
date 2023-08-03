@@ -1,22 +1,37 @@
-import { createUseStyles } from 'react-jss'
+import { createUseStyles } from "react-jss";
+import { styled } from "styled-components";
 
 const useClasses = createUseStyles({
   paragraph: {
-    backgroundColor: 'black',
-    color: 'white',
-    '&:hover': {
-      backgroundColor: 'red'
+    backgroundColor: "black",
+    color: "white",
+    "&:hover": {
+      backgroundColor: "red",
     },
-    '&:active': {
-      backgroundColor: 'blue'
-    }
-  }  
-})
+    "&:active": {
+      backgroundColor: "blue",
+    },
+  },
+});
+
+const Paragraph = styled.p`
+  background-color: black;
+  color: white;
+  &:hover {
+    background-color: red;
+  }
+  &:active {
+    background-color: blue;
+  }
+`;
 
 export const Dashboard = () => {
-  const classes = useClasses()
+  const classes = useClasses();
 
   return (
-    <p className={classes.paragraph}>Dashboard</p>
-  )
-}
+    <>
+      <p className={classes.paragraph}>Dashboard</p>
+      <Paragraph>Teste</Paragraph>
+    </>
+  );
+};
